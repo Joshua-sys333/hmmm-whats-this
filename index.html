@@ -57,13 +57,13 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
 </section>
 
 <section class="page" id="countdown">
-  <div class="card"><span class="badge">STAGE 1 · GET READY</span><h2>Catch the falling hearts 💗</h2><p>20 hearts. The speed gets faster. Miss one and you go straight back to <strong>0</strong>.</p><div class="countdown" id="count">3</div><span class="note">Prepare those fingers.</span></div>
+  <div class="card"><span class="badge">STAGE 1 · GET READY</span><h2>Catch the falling hearts 💗</h2><p>15 hearts. The speed gets faster. Miss one and you go straight back to <strong>0</strong>.</p><div class="countdown" id="count">3</div><span class="note">Prepare those fingers.</span></div>
 </section>
 
 <section class="page" id="game">
   <div class="card">
     <span class="badge">STAGE 1 · HEART HUNTER</span>
-    <h2>Catch <span class="highlight">20 hearts</span></h2>
+    <h2>Catch <span class="highlight">15 hearts</span></h2>
     <p>Tap/click the heart before it reaches the bottom. Every heart makes the next one a little faster.</p>
     <div class="progress"><span id="bar"></span></div>
     <div class="gameHud"><div class="stat">💗 Caught <span id="caught">0</span>/20</div><div class="stat">⚡ Speed <span id="speed">1</span>x</div><div class="stat">🔥 Streak <span id="streak">0</span></div></div>
@@ -84,7 +84,7 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
 
 <section class="page" id="q5"><div class="card"><span class="badge">STAGE 2 · FINAL QUESTION</span><div class="stepbar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div><div class="qnum">Question 5 of 5</div><h2>Do you love <span class="highlight">Joshua enough?</span> 🥹</h2><p>This is the only question where I'm going to be dramatic about the answer.</p><div class="actions"><button class="btn primary" data-action="love-yes">YES 💗</button><button class="btn secondary" data-action="love-no">NO 😭</button></div><span class="note">Warning: NO activates the emergency Joshua system. 🚨</span></div></section>
 
-<section class="page" id="interlude"><div class="card"><span class="badge">🔓 STAGE 3 · UNLOCKED</span><span class="bigEmoji">💗</span><p class="eyebrow">Okay… you made it.</p><h2>One last thing before I ask.</h2><div class="secret"><p>I could have just asked you directly, but that would have been boring. So I made you catch 20 hearts, answer random questions, and survive the most unnecessary quiz ever. 😂</p><p style="margin-top:12px"><strong>But I made it because there's something I've genuinely been wanting to say.</strong></p></div><div class="actions"><button class="btn primary" data-action="interlude">Tell me already 👀</button></div></div></section>
+<section class="page" id="interlude"><div class="card"><span class="badge">🔓 STAGE 3 · UNLOCKED</span><span class="bigEmoji">💗</span><p class="eyebrow">Okay… you made it.</p><h2>One last thing before I ask.</h2><div class="secret"><p>I could have just asked you directly, but that would have been boring. So I made you catch 15 hearts, answer random questions, and survive the most unnecessary quiz ever. 😂</p><p style="margin-top:12px"><strong>But I made it because there's something I've genuinely been wanting to say.</strong></p></div><div class="actions"><button class="btn primary" data-action="interlude">Tell me already 👀</button></div></div></section>
 
 <section class="page" id="important"><div class="card"><span class="badge">💌 THE IMPORTANT QUESTION</span><div class="finalHeart">💗</div><p class="eyebrow">No more games.</p><h1>Can I be<br><span class="highlight">your boyfriend?</span></h1><div class="secret"><p>I really like you. I love the little moments, the stupid jokes, and the way you make ordinary days feel a little more special. So I wanted to ask you properly.</p><p style="margin-top:10px"><strong>Can I be your boyfriend? 🥹</strong></p></div><div class="actions"><button class="btn primary" data-action="final-yes">YES, YOU CAN 💕</button><button class="btn secondary" id="maybeBtn" data-action="maybe">I need a moment…</button></div><div class="success" id="success"><h2 style="margin:0 0 8px">WAIT… REALLY?! 😭💗</h2><p style="margin:0">Okay. Then it's official. I am smiling like an idiot right now.</p><div style="font-size:38px;margin-top:10px">🫶🏻💐🍪💗✨</div></div></div></section>
 
@@ -151,7 +151,7 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
     const streakEl = document.getElementById('streak');
     const speedEl = document.getElementById('speed');
     const barEl = document.getElementById('bar');
-    const speed = Math.min(5, 1 + Math.floor(caught / 4));
+    const speed = Math.min(4, 1 + Math.floor(caught / 6));
     caughtEl.textContent = String(caught);
     streakEl.textContent = String(streak);
     speedEl.textContent = String(speed);
@@ -189,7 +189,7 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
 
   function schedule(myToken) {
     if (!running || myToken !== token) return;
-    const delay = Math.max(360, 900 - caught * 28);
+    const delay = Math.max(520, 880 - caught * 16);
     timer = window.setTimeout(function () {
       spawn(myToken);
     }, delay);
@@ -216,8 +216,8 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
     if (!running || myToken !== token) return;
     const arena = document.getElementById('arena');
     const heart = document.createElement('div');
-    const speed = Math.min(5, 1 + Math.floor(caught / 4));
-    const sec = Math.max(1.05, 4 / speed);
+    const speed = Math.min(4, 1 + Math.floor(caught / 6));
+    const sec = Math.max(1.55, 4.8 / speed);
     let clicked = false;
 
     heart.className = 'fall';
