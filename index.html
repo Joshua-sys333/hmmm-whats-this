@@ -31,7 +31,9 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
 .qnum{font-size:13px;color:var(--muted);font-weight:900}.answer{max-width:600px;margin:22px auto 0}.input{width:100%;padding:15px 17px;border-radius:18px;border:2px solid #ffd9e5;background:#fff;outline:none}.input:focus{border-color:var(--pink)}.options{display:grid;gap:11px;max-width:600px;margin:22px auto 0}.opt{padding:15px 17px;border:2px solid #ffe0ea;background:#fff;border-radius:18px;text-align:left;font-weight:850;transition:.18s}.opt:hover,.opt.sel{border-color:var(--pink);background:#fff4f8;transform:translateY(-1px)}.qnav{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:25px}.qnav .btn{width:auto}
 /* interlude + final */
 .secret{margin:22px auto 0;max-width:620px;background:#fff5f8;border:1px solid #ffd7e4;border-radius:22px;padding:20px;text-align:left}.secret p{margin:0;font-size:16px}.countdown{font-size:56px;font-weight:1000;color:var(--pink);letter-spacing:-2px;min-height:65px}
-.finalHeart{font-size:98px;animation:beat 1.2s infinite}@keyframes beat{20%{transform:scale(1.02)}40%{transform:scale(.98)}60%{transform:scale(1.1)}80%{transform:scale(1)}}.success{display:none;margin:20px auto 0;max-width:620px;padding:20px;background:#fff5f8;border:1px solid #ffd6e3;border-radius:22px}.success.show{display:block;animation:in .5s ease}
+.finalHeart{font-size:98px;animation:beat 1.2s infinite}
+.finalQuestion{font-size:clamp(54px,11vw,108px)!important;line-height:.92;letter-spacing:-4px}
+.finalActions{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:30px;position:relative;min-height:92px}.finalActions .btn{font-size:clamp(20px,4vw,30px);padding:20px 34px;min-width:190px}.finalActions .btn:hover{transform:translateY(-3px)}@keyframes beat{20%{transform:scale(1.02)}40%{transform:scale(.98)}60%{transform:scale(1.1)}80%{transform:scale(1)}}.success{display:none;margin:20px auto 0;max-width:620px;padding:20px;background:#fff5f8;border:1px solid #ffd6e3;border-radius:22px}.success.show{display:block;animation:in .5s ease}
 /* jump */
 #jump{display:none;position:fixed;inset:0;z-index:100;background:rgba(12,4,8,.96);align-items:center;justify-content:center;padding:16px}#jump.show{display:flex;animation:flash .12s ease}@keyframes flash{0%{opacity:0}100%{opacity:1}}.jumpBox{width:min(690px,100%);text-align:center;color:#fff}.jumpBox img{width:min(510px,94vw);max-height:68vh;object-fit:cover;border-radius:20px;display:block;margin:0 auto 14px;box-shadow:0 28px 100px rgba(255,30,90,.25)}.jumpTitle{font-weight:1000;font-size:clamp(34px,8vw,64px);letter-spacing:-2px;margin:0}.jumpSub{color:#ffc6d6;font-weight:850;margin:6px 0 18px}
 /* confetti */
@@ -78,15 +80,15 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
 
 <section class="page" id="q2"><div class="card"><span class="badge">STAGE 2 · Q&A</span><div class="stepbar"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div><div class="qnum">Question 2 of 5</div><h2>What's the weirdest <span class="highlight">fact about Joshua</span> you know? 😂</h2><p>There are probably too many to choose from.</p><div class="answer"><input class="input" id="a2" placeholder="Your answer…"></div><div class="qnav"><button class="btn secondary" data-back="q1">← Back</button><button class="btn primary" data-next="q3">Next →</button></div></div></section>
 
-<section class="page" id="q3"><div class="card"><span class="badge">STAGE 2 · Q&A</span><div class="stepbar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div><div class="qnum">Question 3 of 5</div><h2>What type of <span class="highlight">cig</span> do you like best?</h2><p>Pick whatever fits you best.</p><div class="options" id="cig"><div class="opt" data-pick="1">The one I usually smoke 🚬</div><div class="opt" data-pick="1">Something light</div><div class="opt" data-pick="1">Something stronger</div><div class="opt" data-pick="1">I don't smoke</div><div class="opt" data-pick="1">Other / secret answer 👀</div></div><div class="qnav"><button class="btn secondary" data-back="q2">← Back</button><button class="btn primary" data-next="q4">Next →</button></div></div></section>
+<section class="page" id="q3"><div class="card"><span class="badge">STAGE 2 · Q&A</span><div class="stepbar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div><div class="qnum">Question 3 of 5</div><h2>What type of <span class="highlight">cig</span> do you usually smoke?</h2><p>Just type your answer — no choices here. 👀</p><div class="answer"><input class="input" id="a3" placeholder="Type your answer…"></div><div class="qnav"><button class="btn secondary" data-back="q2">← Back</button><button class="btn primary" data-next="q4">Next →</button></div></div></section>
 
-<section class="page" id="q4"><div class="card"><span class="badge">STAGE 2 · Q&A</span><div class="stepbar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div><div class="qnum">Question 4 of 5</div><h2>Do you <span class="highlight">love Oreo?</span> 🍪</h2><p>Again, there is no wrong answer. (This is a judgment-free zone.)</p><div class="options"><div class="opt" data-pick="1">YES. Oreo supremacy. 🍪👑</div><div class="opt" data-pick="1">Sometimes!</div><div class="opt" data-pick="1">Not really 😭</div><div class="opt" data-pick="1">I am Oreo-neutral.</div></div><div class="qnav"><button class="btn secondary" data-back="q3">← Back</button><button class="btn primary" data-next="q5">Next →</button></div></div></section>
+<section class="page" id="q4"><div class="card"><span class="badge">STAGE 2 · Q&A</span><div class="stepbar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div><div class="qnum">Question 4 of 5</div><h2>Do you <span class="highlight">love Oreo?</span> 🐶</h2><p>Yes or no only. Oreo is obviously our little dog. 🐾</p><div class="actions"><button class="btn primary oreo-choice" data-oreo="yes">YES 🐶💗</button><button class="btn secondary oreo-choice" data-oreo="no">NO 😭🐾</button></div><div class="qnav"><button class="btn secondary" data-back="q3">← Back</button><button class="btn primary" data-next="q5">Next →</button></div></div></section>
 
 <section class="page" id="q5"><div class="card"><span class="badge">STAGE 2 · FINAL QUESTION</span><div class="stepbar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div><div class="qnum">Question 5 of 5</div><h2>Do you love <span class="highlight">Joshua enough?</span> 🥹</h2><p>This is the only question where I'm going to be dramatic about the answer.</p><div class="actions"><button class="btn primary" data-action="love-yes">YES 💗</button><button class="btn secondary" data-action="love-no">NO 😭</button></div><span class="note">Warning: NO activates the emergency Joshua system. 🚨</span></div></section>
 
 <section class="page" id="interlude"><div class="card"><span class="badge">🔓 STAGE 3 · UNLOCKED</span><span class="bigEmoji">💗</span><p class="eyebrow">Okay… you made it.</p><h2>One last thing before I ask.</h2><div class="secret"><p>I could have just asked you directly, but that would have been boring. So I made you catch 15 hearts, answer random questions, and survive the most unnecessary quiz ever. 😂</p><p style="margin-top:12px"><strong>But I made it because there's something I've genuinely been wanting to say.</strong></p></div><div class="actions"><button class="btn primary" data-action="interlude">Tell me already 👀</button></div></div></section>
 
-<section class="page" id="important"><div class="card"><span class="badge">💌 THE IMPORTANT QUESTION</span><div class="finalHeart">💗</div><p class="eyebrow">No more games.</p><h1>Can I be<br><span class="highlight">your boyfriend?</span></h1><div class="secret"><p>I really like you. I love the little moments, the stupid jokes, and the way you make ordinary days feel a little more special. So I wanted to ask you properly.</p><p style="margin-top:10px"><strong>Can I be your boyfriend? 🥹</strong></p></div><div class="actions"><button class="btn primary" data-action="final-yes">YES, YOU CAN 💕</button><button class="btn secondary" id="maybeBtn" data-action="maybe">I need a moment…</button></div><div class="success" id="success"><h2 style="margin:0 0 8px">WAIT… REALLY?! 😭💗</h2><p style="margin:0">Okay. Then it's official. I am smiling like an idiot right now.</p><div style="font-size:38px;margin-top:10px">🫶🏻💐🍪💗✨</div></div></div></section>
+<section class="page" id="important"><div class="card"><span class="badge">💌 THE IMPORTANT QUESTION</span><div class="finalHeart">💗</div><p class="eyebrow">No more games.</p><h1 class="finalQuestion">Can I be<br><span class="highlight">your boyfriend?</span></h1><div class="secret"><p>I really like you. I love the little moments, the stupid jokes, and the way you make ordinary days feel a little more special. So I wanted to ask you properly.</p><p style="margin-top:10px"><strong>Can I be your boyfriend? 🥹</strong></p></div><div class="finalActions"><button class="btn primary" data-action="final-yes">YES, YOU CAN 💕</button><button class="btn secondary" id="maybeBtn" data-action="maybe">NO 😭</button></div><div class="success" id="success"><h2 style="margin:0 0 8px">WAIT… REALLY?! 😭💗</h2><p style="margin:0">Okay. Then it's official. I am smiling like an idiot right now.</p><div style="font-size:38px;margin-top:10px">🫶🏻💐🍪💗✨</div></div></div></section>
 
 </div>
 
@@ -289,11 +291,18 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
     window.setTimeout(function () { playTone(1040, 0.16); }, 280);
   }
 
-  function maybeMessage() {
+  function moveNoButton() {
     const button = document.getElementById('maybeBtn');
-    button.textContent = 'Okay… take your time 🥹';
-    button.classList.remove('secondary');
-    button.classList.add('soft');
+    const box = button.parentElement;
+    const maxX = Math.max(12, box.clientWidth - button.offsetWidth - 12);
+    const maxY = Math.max(0, box.clientHeight - button.offsetHeight);
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+    button.style.position = 'absolute';
+    button.style.left = String(x) + 'px';
+    button.style.top = String(y) + 'px';
+    button.textContent = ['NO 😭', 'NOPE 😭', 'TRY AGAIN 😭', 'NOT SO FAST 😈'][Math.floor(Math.random() * 4)];
+    playTone(280, 0.06);
   }
 
   function burst() {
@@ -320,6 +329,7 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
     const close = document.querySelector('[data-action="close-jump"]');
     const final = document.querySelector('[data-action="final-yes"]');
     const maybe = document.querySelector('[data-action="maybe"]');
+    const oreoChoices = document.querySelectorAll('.oreo-choice');
     const interlude = document.querySelector('[data-action="interlude"]');
 
     if (start) start.addEventListener('click', startMission);
@@ -337,7 +347,13 @@ h1{margin:10px 0 16px;font-size:clamp(42px,9vw,76px);line-height:.96;letter-spac
     if (noLove) noLove.addEventListener('click', loveNo);
     if (close) close.addEventListener('click', closeJump);
     if (final) final.addEventListener('click', finalYes);
-    if (maybe) maybe.addEventListener('click', maybeMessage);
+    if (maybe) maybe.addEventListener('click', moveNoButton);
+    oreoChoices.forEach(function (button) {
+      button.addEventListener('click', function () {
+        if (button.getAttribute('data-oreo') === 'yes') showPage('q5');
+        else showPage('q5');
+      });
+    });
     if (interlude) interlude.addEventListener('click', function () { showPage('important'); });
   }
 
